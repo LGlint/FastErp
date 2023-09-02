@@ -1,0 +1,43 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Category_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <!--            <input id="c-category_id" data-rule="required" data-source="category/selectpage" data-params='{"custom[type]":"goods"}' class="form-control selectpage" name="row[category_id]" type="text" value="">-->
+            {:build_category_select('row[category_id]', 'goods', null, ['data-rule'=>'required'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Unit_info')}:</label>
+        <div class="col-xs-12 col-sm-5">
+            <input placeholder="例：1米=100厘米=1000毫米" id="c-unit_info" data-rule="required;unit" class="form-control"
+                   name="row[unit_info]" type="text">
+            <!--<textarea id="c-unit_info" data-rule="required" class="form-control " rows="5" name="row[unit_info]" cols="50"></textarea>-->
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">单位售价:</label>
+        <div style="padding-top: 7px" class="no-border col-xs-3" id="placeholder">请先填写商品规格</div>
+        <div class="unit-price-input-group col-xs-12 col-sm-4">
+
+        </div>
+        <span id="warningMsg" class="msg-box n-right"></span>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+<script type="application/javascript">
+    var unit_info = {};
+</script>

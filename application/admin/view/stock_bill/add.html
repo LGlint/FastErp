@@ -1,0 +1,80 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <!--商品数据-->
+    <div>
+        <div class="form-group goods-item">
+            <label class="control-label col-xs-12 col-sm-2">
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon">商品</span>
+                    <input data-format-item="{name}┃{category_id}" data-rule="required" min="0"
+                           data-page-size="10" data-pagination="true"
+                           data-source="goods/goods/index"
+                           class="form-control selectpage c-goods_id" name="row[goods_id][0][]" type="text" value="">
+                </div>
+            </div>
+            <span class="msg-box n-right"></span>
+        </div>
+
+        <div class="form-group out-warehouse-id-item">
+            <label class="control-label col-xs-12 col-sm-2">
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon">调出仓库</span>
+                    <input data-rule="required" min="0" data-page-size="10" data-pagination="true"
+                           data-source="warehouse/index"
+                           class="form-control selectpage c-out_warehouse_id" disabled name="row[out_warehouse_id][0][]" type="text" value="">
+                </div>
+            </div>
+            <span class="msg-box n-right"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">
+            </label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-addon">调入仓库</span>
+                    <input data-rule="required" min="0" data-page-size="10" data-pagination="true"
+                           data-source="warehouse/index"
+                           class="form-control selectpage c-warehouse_id" name="row[in_warehouse_id][0][]" type="text" value="">
+                </div>
+            </div>
+            <span class="msg-box n-right"></span>
+        </div>
+
+        <div class="goods-unit-num-item form-group">
+            <label class="control-label col-xs-12 col-sm-2">数量</label>
+            <div class="unit-num-input-group col-xs-12 col-sm-4">
+
+            </div>
+            <span class="msg-box n-right"></span>
+        </div>
+
+        <!--虚线-->
+        <div class="form-group dashed-line">
+            <div style="border-top: 2px dashed gray"></div>
+        </div>
+    </div>
+
+
+
+    <!--增加选框按钮-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-4">
+            <button class="btn btn-success add-goods-item-btn" type="button">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
